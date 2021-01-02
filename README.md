@@ -2,6 +2,7 @@
 A Simple SDL Raytracer made in C++
 
 # To make it go
+* Just run make
 * You need an xwindow environment or the like
 * The program was tested using `vcxsrv` from within WSL
 * Should just run natively on Linux with SDL2 installed
