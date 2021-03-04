@@ -7,4 +7,5 @@ CXXFLAGS = -g -Wall  -lm -lSDL2 -O3
 $(target): $(obj)
 	$(CC) -o  $@ $^ $(CXXFLAGS)
 
-.PHONY: clean
+clean: $(target)
+	rm $^
