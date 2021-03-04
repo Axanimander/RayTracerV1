@@ -5,7 +5,7 @@ A Simple SDL Raytracer made in C++
 * Just run make
 * You need an xwindow environment or the like
 * The program was tested using `vcxsrv` from within WSL
-* Should just run natively on Linux with SDL2 installed
+* Should just run natively on Linux with **SDL2 installed**
 
 # Instructions
 * Use `main.cpp` to create spheres and mess with lighting, an example is in place
