@@ -14,7 +14,7 @@
 #include "viewport.h"
 #include "raytracer.h"
 #include "sphere.h"
-
+#include <iostream>
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
@@ -22,7 +22,7 @@ using std::cerr;
 using std::endl;
 int main(int argc, char* args[]) {
 
-  SDLCanvas S(640, 640);
+  SDLCanvas S(1040, 1040);
   Vec3 O(0,0,0);
   Viewport VP(O,S,1,1);
   Sphere S1(Vec3(0, -1, 3), .5,Color(255,0,0), 500, 0.6);
@@ -40,17 +40,20 @@ int main(int argc, char* args[]) {
   R.addLight(Light('P', 0.6, Vec3(2,1,0)));
   R.addLight(Light('D', 0.2, Vec3(1,4,4)));
 
-  R.render();
+  //R.render();
   for(int i = 0; i < 20; i++){
     R.moveSphere(0, Vec3(.1,0,0));
     R.moveSphere(1, Vec3(0, .1, 0));
-  //  R.moveSphere(2, Vec3(.1,0,0));
-   // R.moveLight(2, Vec3(0, 0,-.3));
+    R.moveSphere(1, Vec3(.1,0,0));
+    R.moveLight(2, Vec3(0, 0,-.3));
     R.render();
     
   }
-  //Color blue(0, 0, 0xff);
-  //S.putPixel(0,0,blue);
+  //R.render();
+//  Color blue(0, 0, 0xff);
+ // S.putPixel(0,0,blue);
   
-  SDL_Delay(1000);
+  
+  //SDL_Delay(1000);
+  SDL_Quit();
 }

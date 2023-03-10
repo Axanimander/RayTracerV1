@@ -10,8 +10,8 @@ Raytracer::Raytracer(SDLCanvas canvas, Viewport vp) : canvas(canvas), vp(vp) {
 }
 
 void Raytracer::render(){
-    for(int x = canvas.left(); x < canvas.right(); x++){
-        for(int y = canvas.top(); y < canvas.bottom(); y++){
+    for(int x = canvas.left() + 1; x < canvas.right() -1; x++){
+        for(int y = canvas.top() + 1; y < canvas.bottom() - 1; y++){
             Vec3 pos(x, y, 1);
             Vec3 D = vp.canvasToViewportPos(pos);
             Ray r(vp.getOrigin(), D);
